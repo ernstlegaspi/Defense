@@ -12,6 +12,6 @@ void AEnemyAIManager::BeginPlay() {
 
 void AEnemyAIManager::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
-
+	
 	MoveToLocation(FinishLineManager->GetActorLocation());
 }
