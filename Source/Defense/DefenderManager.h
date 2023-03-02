@@ -14,6 +14,15 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	UPROPERTY()
+	class UAnimInstance* AnimInstance;
+
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* AM_Idle;
+
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* AM_Attack;
+
 	UPROPERTY(VisibleAnywhere)
 	class UBoxComponent* DefenderTrigger;
 
@@ -21,7 +30,10 @@ protected:
 	class AActor* Enemy;
 
 	UFUNCTION()
-	void DefenderOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void DefenderEnterOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	
+	UFUNCTION()
+	void DefenderExitOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 public:	
 	virtual void Tick(float DeltaTime) override;

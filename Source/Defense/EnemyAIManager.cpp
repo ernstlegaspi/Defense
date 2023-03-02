@@ -2,6 +2,7 @@
 #include "FinishLineManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "NavigationSystem.h"
+#include "Math/UnrealMathUtility.h"
 
 void AEnemyAIManager::BeginPlay() {
 	Super::BeginPlay();
