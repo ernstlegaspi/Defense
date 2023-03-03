@@ -22,6 +22,7 @@ void ADefender::BeginPlay() {
 
 	Enemy = nullptr;
 	AnimInstance = GetMesh()->GetAnimInstance();
+	World = GetWorld();
 }
 
 void ADefender::Tick(float DeltaTime) {

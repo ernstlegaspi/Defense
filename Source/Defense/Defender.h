@@ -11,8 +11,14 @@ class DEFENSE_API ADefender : public ACharacter {
 public:
 	ADefender();
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> Fireball;
+
 	UPROPERTY()
 	class AActor* AEnemy;
+
+	UPROPERTY()
+	class UWorld* World;
 
 protected:
 	virtual void BeginPlay() override;
